@@ -4,7 +4,8 @@ from urllib.parse import quote
 import json,re,base64,mimetypes
 root=Path(__file__).resolve().parents[1]
 s=(root/'src.js').read_text()
-s=s.replace("import './style.css';",'').replace("import { articleTitle, articleDescription, articleBody } from './article-content.js';",(root/'article-content.js').read_text().replace('export const ','const '))
+s=s.replace("import './style.css';", '')
+s=re.sub(r"import \{[^}]+\} from '(\./[^']+\.js)';", lambda match: (root/match[1]).read_text().replace('export const ', 'const '), s)
 s=s.replace('const path = window.location.pathname;',"const path = (location.hash.slice(1).split('#')[0] || '/');")
 s=s.replace('href="/','href="#/').replace('href="#matches"','href="#/#matches"')
 for asset in (root/'public/assets').rglob('*'):
