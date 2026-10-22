@@ -8,6 +8,7 @@ s=s.replace("import './style.css';", '')
 s=re.sub(r"import \{[^}]+\} from '(\./[^']+\.js)';", lambda match: (root/match[1]).read_text().replace('export const ', 'const '), s)
 s=s.replace('const path = window.location.pathname;',"const path = (location.hash.slice(1).split('#')[0] || '/');")
 s=s.replace('href="/','href="#/').replace('href="#matches"','href="#/#matches"')
+s=re.sub(r"(\bhref:\s*[\'\"])/", r"\1#/", s)
 for asset in (root/'public/assets').rglob('*'):
  if not asset.is_file(): continue
  asset_url='/assets/'+asset.relative_to(root/'public/assets').as_posix()
