@@ -17,52 +17,74 @@ export const athleteRoster = [
 const escapeAthleteText = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 const athleteCard = athlete => `<li class="athlete-carousel-card"><div class="athlete-portrait">${athlete.photo ? `<img src="${escapeAthleteText(athlete.photo)}" alt="${escapeAthleteText(athlete.name)} 선수 공식 프로필" width="340" height="510" loading="lazy">` : `<div class="athlete-photo-placeholder" aria-hidden="true"><svg viewBox="0 0 180 180" fill="none"><circle cx="90" cy="64" r="25"/><path d="M39 150v-10c0-29 21-46 51-46s51 17 51 46v10"/><circle class="portrait-ring" cx="90" cy="90" r="78"/></svg></div>`}</div><div class="athlete-caption"><span>${escapeAthleteText(athlete.discipline)}</span><h3>${escapeAthleteText(athlete.name)}</h3><p>${escapeAthleteText(athlete.achievement)}</p></div></li>`;
 const athleteCards = athleteRoster.map(athleteCard).join('');
-export const athletes = `<section class="section wrap athlete-section" id="athletes" aria-labelledby="athletes-title"><div class="section-heading"><div><span class="eyebrow">대한민국 선수</span><h2 id="athletes-title">한 명 한 명, 기억할 이름.</h2></div><p>리커브부터 컴파운드까지, 대한민국 선수들을 만나보세요.</p></div><div class="athlete-carousel-toolbar"><p>원하는 선수에서 멈추고, 좌우로 넘겨보세요.</p><div class="athlete-carousel-controls"><button class="carousel-toggle" type="button" aria-pressed="false" aria-controls="athlete-viewport">Ⅱ 자동 넘김 멈춤</button><button class="carousel-prev" type="button" aria-label="이전 선수 보기" aria-controls="athlete-viewport">←</button><button class="carousel-next" type="button" aria-label="다음 선수 보기" aria-controls="athlete-viewport">→</button></div></div><div class="athlete-viewport" id="athlete-viewport" role="region" aria-label="대한민국 선수 슬라이드, 좌우로 넘겨서 볼 수 있습니다" tabindex="0"><div class="athlete-belt"><ul class="athlete-carousel-list" aria-label="선수 목록">${athleteCards}</ul><ul class="athlete-carousel-list" aria-hidden="true" inert>${athleteCards}</ul></div></div></section>`;
+export const athletes = `<section class="section wrap athlete-section" id="athletes" aria-labelledby="athletes-title"><div class="section-heading"><div><span class="eyebrow">대한민국 선수</span><h2 id="athletes-title">한 명 한 명, 기억할 이름.</h2></div><p>사진을 좌우로 넘겨 선수들을 만나보세요.</p></div><div class="athlete-viewport" id="athlete-viewport" role="region" aria-label="대한민국 선수 슬라이드. 좌우 화살표 키 또는 드래그로 넘길 수 있습니다." tabindex="0"><div class="athlete-belt"><ul class="athlete-carousel-list" aria-label="선수 목록">${athleteCards}</ul><ul class="athlete-carousel-list" aria-hidden="true" inert>${athleteCards}</ul></div></div></section>`;
 
 export const initAthleteCarousel = section => {
  if (!section) return () => {};
  const viewport = section.querySelector('.athlete-viewport');
  const group = section.querySelector('.athlete-carousel-list');
- const toggle = section.querySelector('.carousel-toggle');
- const previous = section.querySelector('.carousel-prev');
- const next = section.querySelector('.carousel-next');
  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
- let userPaused = reducedMotion.matches;
- let hoverPaused = false;
- let focusPaused = false;
+ const idleDelay = 3000;
+ const listeners = [];
+ let resumeAt = performance.now() + idleDelay;
  let visible = false;
+ let keyboardFocus = false;
+ let dragging = false;
+ let dragStartX = 0;
+ let dragStartLeft = 0;
  let lastTime = 0;
  let remainder = 0;
  let frame;
  let disposed = false;
- const updateToggle = () => {
-  toggle.textContent = userPaused ? '▶ 자동 넘김 시작' : 'Ⅱ 자동 넘김 멈춤';
-  toggle.setAttribute('aria-pressed', String(userPaused));
-  toggle.setAttribute('aria-label', userPaused ? '선수 슬라이드 자동 넘김 시작하기' : '선수 슬라이드 자동 넘김 멈추기');
+ const listen = (target, type, handler, options) => {
+  target.addEventListener(type, handler, options);
+  listeners.push(() => target.removeEventListener(type, handler, options));
  };
- const pauseForInteraction = () => { userPaused = true; updateToggle(); };
- const togglePlayback = () => { userPaused = !userPaused; updateToggle(); };
- const enter = event => { if (event.pointerType === 'mouse') hoverPaused = true; };
- const leave = () => { hoverPaused = false; };
- const focus = () => { focusPaused = true; };
- const blur = () => { focusPaused = false; };
- const motionChange = event => { if (event.matches) pauseForInteraction(); };
- const advance = direction => {
-  pauseForInteraction();
+ const deferAutoplay = () => { resumeAt = performance.now() + idleDelay; remainder = 0; };
+ const onPointerDown = event => {
+  deferAutoplay();
+  keyboardFocus = false;
+  dragging = true;
+  if (event.pointerType === 'mouse') {
+   dragStartX = event.clientX;
+   dragStartLeft = viewport.scrollLeft;
+   viewport.setPointerCapture(event.pointerId);
+   viewport.classList.add('is-dragging');
+   event.preventDefault();
+  }
+ };
+ const onPointerMove = event => {
+  deferAutoplay();
+  if (dragging && event.pointerType === 'mouse') viewport.scrollLeft = dragStartLeft - (event.clientX - dragStartX);
+ };
+ const endPointer = event => {
+  dragging = false;
+  viewport.classList.remove('is-dragging');
+  if (viewport.hasPointerCapture(event.pointerId)) viewport.releasePointerCapture(event.pointerId);
+  deferAutoplay();
+ };
+ const onKeyDown = event => {
   const width = group.getBoundingClientRect().width;
   const gap = parseFloat(getComputedStyle(group).gap) || 0;
   const step = group.firstElementChild.getBoundingClientRect().width + gap;
-  if (width > 0) viewport.scrollLeft = (viewport.scrollLeft + direction * step + width) % width;
+  if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+  keyboardFocus = true;
+  deferAutoplay();
+  event.preventDefault();
+  if (event.key === 'Home') viewport.scrollLeft = 0;
+  else if (event.key === 'End') viewport.scrollLeft = Math.max(0, width - viewport.clientWidth);
+  else if (width > 0) viewport.scrollLeft = (viewport.scrollLeft + (event.key === 'ArrowRight' ? step : -step) + width) % width;
  };
- const goPrevious = () => advance(-1);
- const goNext = () => advance(1);
- const observer = new IntersectionObserver(entries => { visible = entries[0].isIntersecting; });
+ const observer = new IntersectionObserver(entries => {
+  visible = entries[0].isIntersecting;
+  if (visible) deferAutoplay();
+ });
  observer.observe(viewport);
  const tick = now => {
   if (disposed) return;
   const delta = lastTime ? Math.min(now - lastTime, 64) : 0;
   lastTime = now;
-  if (visible && !document.hidden && !userPaused && !hoverPaused && !focusPaused) {
+  if (visible && !document.hidden && !reducedMotion.matches && !dragging && !keyboardFocus && now >= resumeAt) {
    remainder += delta * .032;
    const pixels = Math.floor(remainder);
    remainder -= pixels;
@@ -74,29 +96,22 @@ export const initAthleteCarousel = section => {
   }
   frame = requestAnimationFrame(tick);
  };
- toggle.addEventListener('click', togglePlayback);
- previous.addEventListener('click', goPrevious);
- next.addEventListener('click', goNext);
- viewport.addEventListener('pointerenter', enter);
- viewport.addEventListener('pointerleave', leave);
- viewport.addEventListener('pointerdown', pauseForInteraction);
- viewport.addEventListener('focus', focus);
- viewport.addEventListener('blur', blur);
- reducedMotion.addEventListener('change', motionChange);
- updateToggle();
+ listen(viewport, 'pointerenter', deferAutoplay);
+ listen(viewport, 'pointerleave', deferAutoplay);
+ listen(viewport, 'pointerdown', onPointerDown);
+ listen(viewport, 'pointermove', onPointerMove);
+ listen(viewport, 'pointerup', endPointer);
+ listen(viewport, 'pointercancel', endPointer);
+ listen(viewport, 'wheel', deferAutoplay, { passive: true });
+ listen(viewport, 'keydown', onKeyDown);
+ listen(viewport, 'focus', () => { keyboardFocus = viewport.matches(':focus-visible'); deferAutoplay(); });
+ listen(viewport, 'blur', () => { keyboardFocus = false; deferAutoplay(); });
+ listen(reducedMotion, 'change', deferAutoplay);
  frame = requestAnimationFrame(tick);
  return () => {
   disposed = true;
   cancelAnimationFrame(frame);
   observer.disconnect();
-  toggle.removeEventListener('click', togglePlayback);
-  previous.removeEventListener('click', goPrevious);
-  next.removeEventListener('click', goNext);
-  viewport.removeEventListener('pointerenter', enter);
-  viewport.removeEventListener('pointerleave', leave);
-  viewport.removeEventListener('pointerdown', pauseForInteraction);
-  viewport.removeEventListener('focus', focus);
-  viewport.removeEventListener('blur', blur);
-  reducedMotion.removeEventListener('change', motionChange);
+  listeners.forEach(remove => remove());
  };
 };
