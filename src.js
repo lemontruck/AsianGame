@@ -1,7 +1,8 @@
 import './style.css';
 import { initMainNavigation } from './navigation.js';
 import { renderMatchCards } from './matches.js';
-import { athletes, athleteRoster, initAthleteCarousel } from './athletes.js';
+import { athletes, athleteRoster } from './athletes.js';
+import { initHorizontalCarousel } from './carousel.js';
 import { quickLook, guide, faqAndSources } from './home-sections.js';
 import { articleTitle, articleDescription, articleBody } from './article-content.js';
 
@@ -36,7 +37,7 @@ function matchCards(filter = '전체') { return renderMatchCards(filter, athlete
 const homeStoryCard = `<a class="home-story-card" href="/2026-asian-games-archery-results"><img src="/assets/article/medals-by-country.png" alt="한국과 인도의 양궁 메달 수 비교" width="1448" height="1086" loading="lazy"><div><span class="eyebrow">대회 결과 분석 · <time datetime="${featuredPost.publishedAt}">${displayPostDate(featuredPost.publishedAt)}</time></span><h3>${articleTitle}</h3><p>한국과 인도의 종목별 성적과 주요 기록을 정리했습니다.</p><span class="text-link">분석 글 읽기 ${arrow}</span></div></a>`;
 const home = `<main><section class="hero"><div class="hero-grid wrap"><div class="hero-copy"><div class="event-label"><span></span> 2026 아이치·나고야 아시안게임 양궁</div><h1>단 한 발,<br>모든 순간이<br><em>금빛이 된다.</em></h1><p>대한민국 양궁의 주요 결승 결과와 다시보기를 한곳에서.<br>보고 싶은 경기를 고르고, 짜릿했던 순간을 다시 만나보세요.</p><a class="button gold" href="#matches">주요 경기 살펴보기 ${arrow}</a><a class="hero-secondary" href="/2026-asian-games-archery-results">이번 대회 결과 읽어보기 →</a></div><div class="hero-art"><img class="hero-static" src="/assets/hero-target.svg" alt="과녁의 노란색 중심에 화살 한 발이 꽂힌 정적인 양궁 이미지" width="800" height="640" fetchpriority="high"></div></div></section>
 ${quickLook}
-<section class="matches-section" id="matches"><div class="wrap section"><div class="section-heading"><div><span class="eyebrow">주요 결승</span><h2>보고 싶은 경기부터 골라보세요.</h2></div><p>선수와 관전 포인트를 보고, 마음 가는 경기를 골라보세요.</p></div><div class="filters" role="group" aria-label="경기 종목 선택"><button class="active" data-filter="전체" aria-pressed="true">전체 경기</button><button data-filter="리커브" aria-pressed="false">리커브</button><button data-filter="컴파운드" aria-pressed="false">컴파운드</button></div><div class="match-grid" id="match-grid">${matchCards()}</div><p class="data-note">주요 결승 경기 모음입니다. 버튼은 해당 경기가 수록된 MBC 방송 회차로 연결되며, 로그인이나 이용권이 필요할 수 있습니다.<br>경기 기록은 기획 원고 기준이며 공식 기록과의 최종 대조가 필요합니다.</p></div></section>
+<section class="matches-section" id="matches"><div class="wrap section"><div class="section-heading"><div><span class="eyebrow">주요 결승</span><h2>보고 싶은 경기부터 골라보세요.</h2></div><p>선수와 관전 포인트를 보고, 마음 가는 경기를 골라보세요.</p></div><div class="filters" role="group" aria-label="경기 종목 선택"><button class="active" data-filter="전체" aria-pressed="true">전체 경기</button><button data-filter="리커브" aria-pressed="false">리커브</button><button data-filter="컴파운드" aria-pressed="false">컴파운드</button></div><p class="carousel-hint">좌우로 넘겨 결승 경기를 둘러보세요.</p><div class="match-viewport" role="region" aria-label="주요 결승 경기 슬라이드. 좌우 화살표 키 또는 드래그로 넘길 수 있습니다." tabindex="0"><div class="match-grid" id="match-grid">${matchCards()}</div></div><p class="data-note">주요 결승 경기 모음입니다. 버튼은 해당 경기가 수록된 MBC 방송 회차로 연결되며, 로그인이나 이용권이 필요할 수 있습니다.<br>경기 기록은 기획 원고 기준이며 공식 기록과의 최종 대조가 필요합니다.</p></div></section>
 ${guide}
 ${athletes}
 <section class="home-stories"><div class="section wrap"><div class="section-heading"><div><span class="eyebrow">골든텐 블로그</span><h2>결과 너머의 이야기가 궁금하다면.</h2></div><a class="text-link" href="/blog/">블로그 전체 보기 ${arrow}</a></div>${homeStoryCard}</div></section>
@@ -46,8 +47,14 @@ const article = `<main class="article-main"><div class="wrap breadcrumb"><a href
 const imageViewer = `<dialog class="image-lightbox" aria-labelledby="image-viewer-title"><div class="lightbox-heading"><strong id="image-viewer-title">이미지 크게 보기</strong><button type="button" class="lightbox-close" autofocus>닫기 ×</button></div><p class="lightbox-help">이미지를 좌우·위아래로 움직여 자세히 볼 수 있습니다.</p><div class="lightbox-scroll" tabindex="0" aria-label="원본 이미지 스크롤 영역"><img alt=""></div></dialog>`;
 window.goldenTenCarouselCleanup?.();
 window.goldenTenNavCleanup?.();
+window.goldenTenMatchesCleanup?.();
 document.querySelector('#app').innerHTML = header + (isArticle ? article : isBlog ? blog : home) + finalCta + footer + imageViewer;
-window.goldenTenCarouselCleanup = initAthleteCarousel(document.querySelector('#athletes'));
+window.goldenTenCarouselCleanup = initHorizontalCarousel(document.querySelector('#athletes'), { viewportSelector: '.athlete-viewport', groupSelector: '.athlete-carousel-list', continuous: true });
+function startMatchesCarousel() {
+ window.goldenTenMatchesCleanup?.();
+ window.goldenTenMatchesCleanup = initHorizontalCarousel(document.querySelector('#matches'), { viewportSelector: '.match-viewport', groupSelector: '.match-grid' });
+}
+startMatchesCarousel();
 window.goldenTenNavCleanup = initMainNavigation(isBlog);
 function selectMatchFilter(filter) {
  document.querySelectorAll('[data-filter]').forEach(button => {
@@ -56,6 +63,8 @@ function selectMatchFilter(filter) {
   button.setAttribute('aria-pressed', String(active));
  });
  document.querySelector('#match-grid').innerHTML = matchCards(filter);
+ document.querySelector('.match-viewport').scrollTo({ left: 0, behavior: 'instant' });
+ startMatchesCarousel();
 }
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => selectMatchFilter(button.dataset.filter)));
 
