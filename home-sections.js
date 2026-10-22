@@ -11,17 +11,6 @@ export const guide = `
 <article class="guide-card"><div class="bow-card-heading"><div><span class="discipline-en">COMPOUND</span><h3>컴파운드</h3><p>화살 점수를 끝까지 더해요.</p></div><figure class="bow-visual"><img src="/assets/compound-bow.svg" alt="활의 위아래에 도르래가 달린 컴파운드 활의 구조를 보여주는 그림" width="260" height="220" loading="lazy"><figcaption>양끝에 달린 도르래</figcaption></figure></div><div class="guide-distance"><span>과녁까지</span><strong>50m</strong><span class="distance-line" aria-hidden="true"></span><span aria-hidden="true">◎</span></div><div class="score-demo"><div><span class="score-demo-label">이런 점수판이 보이면</span><strong>149 <span>:</span> 145</strong></div><p><b>화살 점수 총합</b><br>개인전은 15발을 쏴서<br>점수를 모두 더해요.</p></div><p class="guide-takeaway">개인전은 <strong>150점 만점</strong>에서 정확도 대결!</p></article>
 </div><div class="shoot-off-note"><span class="shoot-off-target" aria-hidden="true">◎</span><div><h3>동점이라면? 마지막 한 발, 슛오프.</h3><p>개인전은 한 발씩 더 쏴요. 점수가 같으면 과녁 중심에 더 가까운 화살이 승리해요.</p></div></div></section>`;
 
-export const athletes = `
-<section class="section wrap athlete-section" id="athletes" aria-labelledby="athletes-title">
-  <div class="section-heading"><div><span class="eyebrow">대한민국 선수</span><h2 id="athletes-title">주목할 선수, 기억할 이름.</h2></div><p>선수의 이름과 이번 대회 성적을 함께 만나보세요.</p></div>
-  <div class="athlete-grid">
-    <article class="athlete-card"><span class="athlete-discipline">남자 리커브</span><h3>이우석</h3><p class="athlete-achievement">개인전·단체전 금메달</p><a href="/#matches" data-athlete-filter="리커브">리커브 경기 보기 ↘</a></article>
-    <article class="athlete-card"><span class="athlete-discipline">여자 리커브</span><h3>오예진</h3><p class="athlete-achievement">개인전·단체전 은메달</p><a href="/#matches" data-athlete-filter="리커브">리커브 경기 보기 ↘</a></article>
-    <article class="athlete-card"><span class="athlete-discipline">남자 컴파운드</span><h3>김종호</h3><p class="athlete-achievement">개인전 금메달</p><a href="/#matches" data-athlete-filter="컴파운드">컴파운드 경기 보기 ↘</a></article>
-    <article class="athlete-card"><span class="athlete-discipline">여자 컴파운드</span><h3>강연서</h3><p class="athlete-achievement">개인전·단체전 동메달</p><a href="/2026-asian-games-archery-results">선수 성적 읽어보기 ↗</a></article>
-  </div>
-</section>`;
-
 export const faqAndSources = `
 <section class="faq-section"><div class="wrap section"><div class="section-heading"><div><span class="eyebrow">자주 묻는 질문</span><h2>궁금한 점, 짧게 답해드려요.</h2></div></div>
 <div class="faq-list">

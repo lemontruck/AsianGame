@@ -1,5 +1,6 @@
 import './style.css';
-import { quickLook, guide, athletes, faqAndSources } from './home-sections.js';
+import { athletes, initAthleteCarousel } from './athletes.js';
+import { quickLook, guide, faqAndSources } from './home-sections.js';
 import { articleTitle, articleDescription, articleBody } from './article-content.js';
 
 const video = 'https://playvod.imbc.com/templete/VodList?bid=1006923100000100000';
@@ -49,7 +50,9 @@ ${athletes}
 const blog = `<main class="wrap blog-main"><div class="breadcrumb"><a href="/">홈</a><span>/</span>블로그</div><span class="eyebrow">GOLDEN TEN JOURNAL</span><h1>한 발 너머의 이야기.</h1><p class="page-intro">양궁이 조금 더 가까워지는 이야기.<br>처음 보는 당신도, 다시 보는 당신도.</p><div class="blog-count">전체 이야기 <strong>${String(blogPosts.length).padStart(2, '0')}</strong></div><div class="blog-grid" aria-label="게시글 목록">${blogCards}</div></main>`;
 const article = `<main class="article-main"><div class="wrap breadcrumb"><a href="/">홈</a><span>/</span><a href="/blog/">블로그</a><span>/</span>대회 결과 분석</div><article><header class="article-header"><span class="eyebrow">RESULTS & ANALYSIS · 대회 결과 분석</span><h1>${articleTitle}</h1><p>${articleDescription}</p><div class="byline">골든텐 <span>·</span> <time datetime="${featuredPost.publishedAt}">${displayPostDate(featuredPost.publishedAt)}</time> <span>·</span> 약 12분 읽기</div></header><div class="article-body">${articleBody}<a class="back-link" href="/blog/">← 블로그 목록으로</a></div></article></main>`;
 const imageViewer = `<dialog class="image-lightbox" aria-labelledby="image-viewer-title"><div class="lightbox-heading"><strong id="image-viewer-title">이미지 크게 보기</strong><button type="button" class="lightbox-close" autofocus>닫기 ×</button></div><p class="lightbox-help">이미지를 좌우·위아래로 움직여 자세히 볼 수 있습니다.</p><div class="lightbox-scroll" tabindex="0" aria-label="원본 이미지 스크롤 영역"><img alt=""></div></dialog>`;
+window.goldenTenCarouselCleanup?.();
 document.querySelector('#app').innerHTML = header + (isArticle ? article : isBlog ? blog : home) + finalCta + footer + imageViewer;
+window.goldenTenCarouselCleanup = initAthleteCarousel(document.querySelector('#athletes'));
 function selectMatchFilter(filter) {
  document.querySelectorAll('[data-filter]').forEach(button => {
   const active = button.dataset.filter === filter;
@@ -59,11 +62,6 @@ function selectMatchFilter(filter) {
  document.querySelector('#match-grid').innerHTML = matchCards(filter);
 }
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => selectMatchFilter(button.dataset.filter)));
-document.querySelectorAll('[data-athlete-filter]').forEach(link => link.addEventListener('click', event => {
- event.preventDefault();
- selectMatchFilter(link.dataset.athleteFilter);
- document.getElementById('matches').scrollIntoView({ block: 'start' });
-}));
 
 const viewer = document.querySelector('.image-lightbox');
 document.querySelectorAll('.figure-zoom').forEach(button => button.addEventListener('click', () => {
