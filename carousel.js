@@ -43,7 +43,7 @@ export const initHorizontalCarousel = (section, { viewportSelector, groupSelecto
   if (disposed) return;
   const delta = lastTime ? Math.min(now - lastTime, 64) : 0;
   lastTime = now;
-  if (visible && !document.hidden && !reducedMotion.matches && !dragging && !keyboardFocus && !hovered && now >= resumeAt) {
+  if (visible && !document.hidden && !reducedMotion.matches && !dragging && !keyboardFocus && !hovered && !document.querySelector('dialog[open]') && now >= resumeAt) {
    if (continuous) {
     remainder += delta * .032;
     const pixels = Math.floor(remainder);
@@ -108,6 +108,7 @@ export const initHorizontalCarousel = (section, { viewportSelector, groupSelecto
   if (!viewport.contains(event.relatedTarget)) { keyboardFocus = false; defer(); }
  });
  listen(reducedMotion, 'change', defer);
+ listen(viewport, 'carousel:resume', defer);
  frame = requestAnimationFrame(tick);
  return () => {
   disposed = true;
