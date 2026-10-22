@@ -1,0 +1,114 @@
+{
+  "source": "사용자 제공 선수프로필.zip",
+  "mapping_basis": "원본 파일명의 종목과 이름",
+  "photos": [
+    {
+      "name": "강채영",
+      "discipline_from_filename": "리커브",
+      "original_filename": "리커브_강채영.png",
+      "path": "/assets/athletes/리커브_강채영.png",
+      "width": 340,
+      "height": 510,
+      "sha256": "b3265aa474daff0bdba7826b7c1ce76f97f7c0f4eccbae08579f892515fa8dd6"
+    },
+    {
+      "name": "김우진",
+      "discipline_from_filename": "리커브",
+      "original_filename": "리커브_김우진.png",
+      "path": "/assets/athletes/리커브_김우진.png",
+      "width": 340,
+      "height": 510,
+      "sha256": "05ef75ee8236fa6a9512454058f832b256682ed88b12d1ed7f74bc9c99508ca9"
+    },
+    {
+      "name": "김제덕",
+      "discipline_from_filename": "리커브",
+      "original_filename": "리커브_김제덕.png",
+      "path": "/assets/athletes/리커브_김제덕.png",
+      "width": 340,
+      "height": 510,
+      "sha256": "98126d1469227693a0b6cd8fd849a7e6fddbb52ab118c3426723bafcb15807fa"
+    },
+    {
+      "name": "오예진",
+      "discipline_from_filename": "리커브",
+      "original_filename": "리커브_오예진.png",
+      "path": "/assets/athletes/리커브_오예진.png",
+      "width": 340,
+      "height": 510,
+      "sha256": "7284d24903da3b6f3b675ea3e38dd628c28b11c339e453cd9c02dffb9d57c896"
+    },
+    {
+      "name": "이우석",
+      "discipline_from_filename": "리커브",
+      "original_filename": "리커브_이우석.png",
+      "path": "/assets/athletes/리커브_이우석.png",
+      "width": 340,
+      "height": 510,
+      "sha256": "36b35d618d8e94a7618b8f9a4b21929ac8bd60056c6d992086ef0f1fb5fce709"
+    },
+    {
+      "name": "이윤지",
+      "discipline_from_filename": "리커브",
+      "original_filename": "리커브_이윤지.png",
+      "path": "/assets/athletes/리커브_이윤지.png",
+      "width": 340,
+      "height": 510,
+      "sha256": "b70f19afd33fc6e92235a9e694472e2a14d83a3afc844d563452e4aea5d7de8a"
+    },
+    {
+      "name": "강연서",
+      "discipline_from_filename": "컴파운드",
+      "original_filename": "컴파운드_강연서.png",
+      "path": "/assets/athletes/컴파운드_강연서.png",
+      "width": 340,
+      "height": 510,
+      "sha256": "910a087f4f884df00f38e5b3637b81c508bb50135229255555dae0d045d7ad49"
+    },
+    {
+      "name": "김종호",
+      "discipline_from_filename": "컴파운드",
+      "original_filename": "컴파운드_김종호.png",
+      "path": "/assets/athletes/컴파운드_김종호.png",
+      "width": 340,
+      "height": 510,
+      "sha256": "cad569c0162d6ddfa86348bd4e378865ca2a490fb59f278ef1b23157fedd61c2"
+    },
+    {
+      "name": "박예린",
+      "discipline_from_filename": "컴파운드",
+      "original_filename": "컴파운드_박예린.png",
+      "path": "/assets/athletes/컴파운드_박예린.png",
+      "width": 340,
+      "height": 510,
+      "sha256": "ecb500b6c414faeb2190f6ec9b72dcbe3911de128d009ce58c1ca7eff3937c55"
+    },
+    {
+      "name": "박정윤",
+      "discipline_from_filename": "컴파운드",
+      "original_filename": "컴파운드_박정윤.png",
+      "path": "/assets/athletes/컴파운드_박정윤.png",
+      "width": 340,
+      "height": 510,
+      "sha256": "433e2e524a0ad23a3c1a9c5493817dcec321eac498dde684b2dede3af124bb32"
+    },
+    {
+      "name": "최용희",
+      "discipline_from_filename": "컴파운드",
+      "original_filename": "컴파운드_최용희.png",
+      "path": "/assets/athletes/컴파운드_최용희.png",
+      "width": 340,
+      "height": 510,
+      "sha256": "209f24df1d091f835e5233ae65fd77e7907b8b7786ae26009baafa19d30cdd72"
+    },
+    {
+      "name": "최은규",
+      "discipline_from_filename": "컴파운드",
+      "original_filename": "컴파운드_최은규.png",
+      "path": "/assets/athletes/컴파운드_최은규.png",
+      "width": 340,
+      "height": 510,
+      "sha256": "0491121ac618c5f8276bc01dbc969e8941be113c44a25072de642f2b6381e853"
+    }
+  ]
+}
