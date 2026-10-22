@@ -18,7 +18,7 @@ for asset in (root/'public/assets').rglob('*'):
 main=(root/'index.html').read_text()
 title=re.search(r'<title>(.*?)</title>',main)[1]
 desc=re.search(r'<meta name="description" content="([^"]*)"',main)[1]
-metadata='document.title=isArticle ? articleTitle+" | 골든텐" : isBlog ? "블로그 · 양궁이 가까워지는 이야기 | 골든텐" : '+json.dumps(title)+';\ndocument.querySelector(\'meta[name="description"]\').content=isArticle ? articleDescription : isBlog ? "골든텐 블로그에서 양궁 이야기를 만나보세요." : '+json.dumps(desc)+';'
+metadata='document.title=isRules ? rulesTitle : isArticle ? articleTitle+" | 골든텐" : isBlog ? "블로그 · 양궁이 가까워지는 이야기 | 골든텐" : '+json.dumps(title)+';\ndocument.querySelector(\'meta[name="description"]\').content=isRules ? rulesDescription : isArticle ? articleDescription : isBlog ? "골든텐 블로그에서 양궁 이야기를 만나보세요." : '+json.dumps(desc)+';'
 s=s.replace("document.querySelector('#app').innerHTML",metadata+"\ndocument.querySelector('#app').innerHTML")
 script="function renderGoldenTen(){\n"+s+"\nconst section=location.hash.slice(1).split('#')[1];if(section){requestAnimationFrame(()=>document.getElementById(section)?.scrollIntoView());}else{window.scrollTo(0,0);}\n}\nwindow.addEventListener('hashchange',renderGoldenTen);renderGoldenTen();"
 html=f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{title}</title><meta name="description" content="{desc}"><style>'+(root/'style.css').read_text()+'</style></head><body><div id="app"></div><script>'+script+'</script></body></html>'

@@ -1,0 +1,41 @@
+export const rulesTitle = '양궁 경기 규칙 · 리커브와 컴파운드 쉽게 비교하기 | 골든텐';
+export const rulesDescription = '양궁을 처음 보는 시청자를 위해 리커브와 컴파운드의 활 구조, 점수 계산, 개인전·단체전·혼성전과 슛오프 규칙을 질문과 비교표로 쉽게 설명합니다.';
+const recurveQuestions = [
+ ['리커브 활은 어떤 특징이 있나요?', '<p>활의 양 끝이 바깥쪽으로 휘어 있어요. 선수가 손가락으로 시위를 당겼다가 놓아 화살을 발사합니다. 올림픽 양궁에서 볼 수 있는 활이며, 야외 타깃 경기에서는 <strong>70m</strong> 거리의 과녁을 겨냥해요.</p>'],
+ ['개인전 점수는 어떻게 계산하나요?', '<p>한 세트에 선수마다 <strong>3발</strong>씩 쏘고, 그 세 발의 점수를 합산해요. 합계가 높은 선수가 <strong>세트 승점 2점</strong>을 받고, 같으면 두 선수가 1점씩 나눠 가져요. 진 선수는 그 세트에서 승점을 얻지 못합니다.</p><p>예를 들어 한 세트가 29–28이면, 화살 점수 차이는 1점이지만 세트 승점은 2–0이에요. 개인전은 최대 5세트이며, 먼저 세트 승점 <strong>6점 이상</strong>을 얻으면 승리해요.</p>'],
+ ['6:2라는 스코어는 무슨 뜻인가요?', '<p><strong>화살 점수의 합계가 아니라 세트 승점</strong>을 뜻해요. 예를 들어 네 세트 가운데 세 세트를 이기고 한 세트를 지면 6:2가 됩니다.</p><p>한 세트를 큰 차이로 이겨도 얻는 승점은 2점으로 같아요. 앞 세트의 화살 점수는 다음 세트에 더하지 않으므로 다음 세트에서 다시 승부할 수 있어요.</p>'],
+ ['단체전과 혼성 단체전은 어떻게 진행하나요?', '<ul><li><strong>단체전:</strong> 한 팀 3명이 세트마다 2발씩, 총 6발을 쏩니다.</li><li><strong>혼성 단체전:</strong> 남녀 선수 각 1명으로 구성한 팀이 세트마다 2발씩, 총 4발을 쏩니다.</li></ul><p>두 경기 모두 한 세트를 이기면 승점 2점, 비기면 1점씩 받아요. 최대 4세트를 진행하고, 먼저 세트 승점 <strong>5점 이상</strong>을 얻는 팀이 승리합니다. 개인전의 6점 기준과 구분해주세요.</p>'],
+ ['동점이 되면 어떻게 승자를 결정하나요?', '<p>개인전에서 5세트 후 <strong>5–5</strong>, 단체전·혼성전에서 4세트 후 <strong>4–4</strong>가 되면 추가 사격인 <strong>슛오프</strong>를 진행해요.</p><p>개인전은 한 발씩 쏩니다. 점수를 비교하고, 같은 점수라면 과녁 중심과의 거리 비교나 추가 사격 등 공식 절차로 승자를 정해요. 단체전은 선수마다 한 발씩 쏜 점수의 합계를 먼저 비교하고, 같으면 중심에 가까운 화살 등을 기준으로 승부를 가릅니다.</p><p>리커브 슛오프 승자에게는 세트 승점 1점이 더해져, 개인전 결과가 <strong>6–5</strong> 또는 <strong>5–6</strong>으로 표시될 수 있어요.</p>']
+];
+const compoundQuestions = [
+ ['컴파운드 활은 어떤 특징이 있나요?', '<p>활의 위아래에 <strong>도르래(캠)</strong>가 달려 있어요. 시위를 끝까지 당긴 상태에서 버티는 힘을 줄여주며, 조준기와 발사 보조 장치를 사용해 정교하게 겨냥합니다. 야외 타깃 경기는 <strong>50m</strong> 거리에서 진행해요.</p>'],
+ ['개인전 점수는 어떻게 계산하나요?', '<p>한 엔드에 <strong>3발씩 5엔드, 총 15발</strong>을 쏩니다. 엔드는 화살 몇 발을 쏘는 한 차례를 뜻해요. 한 발의 최고 점수가 10점이므로 개인전 만점은 <strong>150점</strong>입니다.</p><p>리커브처럼 엔드 승리마다 별도 승점을 받지 않아요. 모든 화살 점수를 끝까지 더하고, 최종 총점이 높은 선수가 승리해요.</p>'],
+ ['149:145라는 스코어는 무슨 뜻인가요?', '<p>두 선수가 각각 15발을 쏜 뒤 얻은 <strong>전체 화살 점수</strong>가 149점과 145점이라는 뜻이에요. 149점을 기록한 선수가 4점 차이로 승리합니다.</p><p>한 엔드에서 벌어진 점수 차이는 다음 엔드에도 남아요. 뒤처진 선수는 남은 화살에서 그 차이를 만회해야 해요.</p>'],
+ ['단체전과 혼성 단체전은 어떻게 진행하나요?', '<ul><li><strong>단체전:</strong> 한 팀 3명이 엔드마다 2발씩 쏩니다. 4엔드 동안 총 24발을 쏘며, <strong>240점 만점</strong>입니다.</li><li><strong>혼성 단체전:</strong> 남녀 선수 각 1명이 엔드마다 2발씩 쏩니다. 4엔드 동안 총 16발을 쏘며, <strong>160점 만점</strong>입니다.</li></ul><p>개인전과 마찬가지로 모든 화살 점수를 합산해 더 높은 총점을 얻은 팀이 승리해요.</p>'],
+ ['동점이 되면 어떻게 승자를 결정하나요?', '<p>정해진 화살을 모두 쏜 뒤 총점이 같으면 <strong>슛오프</strong>를 진행합니다. 개인전은 한 발씩, 단체전과 혼성전은 팀원마다 한 발씩 쏩니다.</p><p>슛오프 점수를 먼저 비교하고, 같으면 중심에 더 가까운 화살 등을 기준으로 승부를 가려요. 필요한 경우 추가 사격을 진행합니다.</p><p>예를 들어 혼성전이 157–157로 끝난 뒤 슛오프가 19–20이면, <strong>정규 경기 총점은 동점이고 슛오프에서 19점을 쏜 팀이 패한 것</strong>이에요. 슛오프 결과는 정규 경기 점수와 구분해 읽으면 됩니다.</p>']
+];
+const rulesAccordion = questions => `<div class="rules-accordion">${questions.map(([question, answer], index) => `<details><summary><span class="question-number">${String(index + 1).padStart(2,'0')}</span><span>${question}</span></summary><div class="rules-answer">${answer}</div></details>`).join('')}</div>`;
+const comparisonRows = [
+ ['활의 구조', '양 끝이 휘어진 활', '도르래가 달린 활'],
+ ['경기 거리', '70m', '50m'],
+ ['과녁 지름', '122cm', '80cm 규격'],
+ ['개인전 발사 횟수', '세트당 3발, 최대 5세트', '3발씩 5엔드, 총 15발'],
+ ['개인전 점수 방식', '세트 승점제', '총점 합산제'],
+ ['개인전 승리 조건', '세트 승점 6점 이상 선취', '15발의 총점 우세'],
+ ['대표 스코어', '6:2 — 세트 승점', '149:145 — 화살 점수 합계'],
+ ['단체전', '세트당 6발 · 최대 4세트\n세트 승점 5점 이상 선취', '4엔드, 총 24발\n240점 만점'],
+ ['혼성 단체전', '세트당 4발 · 최대 4세트\n세트 승점 5점 이상 선취', '4엔드, 총 16발\n160점 만점'],
+ ['동점 시', '슛오프', '슛오프']
+];
+export const rulesPage = `<main class="rules-main wrap">
+<div class="breadcrumb"><a href="/">홈</a><span>/</span><span aria-current="page">경기 규칙</span></div>
+<header class="rules-page-heading"><span class="eyebrow">ARCHERY, MADE SIMPLE</span><h1>양궁 경기 규칙 가이드</h1><p>리커브와 컴파운드, 무엇이 어떻게 다를까?</p></header>
+<nav class="rules-toc" aria-label="규칙 가이드 목차"><a href="/archery-rules/#recurve-rules"><span>01</span><strong>리커브 경기 규칙</strong><small>활의 구조 · 개인전 · 단체전 · 혼성전 · 슛오프</small></a><a href="/archery-rules/#compound-rules"><span>02</span><strong>컴파운드 경기 규칙</strong><small>활의 구조 · 개인전 · 단체전 · 혼성전 · 슛오프</small></a><a href="/archery-rules/#rules-comparison"><span>03</span><strong>리커브 vs 컴파운드</strong><small>비교표 · 실제 점수 예시 · 핵심 차이</small></a></nav>
+<section class="rules-discipline recurve-rules" id="recurve-rules" aria-labelledby="recurve-heading"><div class="rules-discipline-intro"><div><span class="eyebrow">01 / RECURVE</span><h2 id="recurve-heading">리커브 <span>(Recurve)</span></h2><p class="rules-keywords">70m 거리 · 세트 승점제 · 개인전 6점 선취</p><p>리커브는 세트마다 승점을 쌓아 승부를 결정하는 종목입니다. 한 세트에서 높은 점수를 기록하면 승점 2점을 획득하며, 개인전은 먼저 승점 6점 이상을 얻는 선수가 승리합니다.</p></div><img src="/assets/recurve-bow.svg" width="260" height="220" alt="끝이 바깥쪽으로 휘어진 리커브 활의 구조" loading="lazy"></div>${rulesAccordion(recurveQuestions)}</section>
+<section class="rules-discipline compound-rules" id="compound-rules" aria-labelledby="compound-heading"><div class="rules-discipline-intro"><div><span class="eyebrow">02 / COMPOUND</span><h2 id="compound-heading">컴파운드 <span>(Compound)</span></h2><p class="rules-keywords">50m 거리 · 누적 점수제 · 개인전 150점 만점</p><p>컴파운드는 화살 점수를 끝까지 합산해 승부를 결정합니다. 개인전에서는 15발을 쏘며, 최고 150점 가운데 더 높은 총점을 기록한 선수가 승리합니다.</p></div><img src="/assets/compound-bow.svg" width="260" height="220" alt="위아래에 도르래가 달린 컴파운드 활의 구조" loading="lazy"></div>${rulesAccordion(compoundQuestions)}</section>
+<section class="rules-comparison" id="rules-comparison" aria-labelledby="comparison-heading"><span class="eyebrow">03 / COMPARE THE GAME</span><h2 id="comparison-heading">리커브 vs 컴파운드 — 한눈에 비교</h2><p>리커브는 <strong>세트를 이겨야</strong> 하고, 컴파운드는 <strong>전체 점수를 높게 쌓아야</strong> 해요.</p><p class="rules-table-hint">작은 화면에서는 표를 좌우로 움직여 확인하세요.</p><div class="rules-table-scroll" tabindex="0" role="region" aria-label="리커브와 컴파운드 비교표"><table><caption>야외 타깃 양궁 토너먼트 경기 기준</caption><thead><tr><th scope="col">비교 항목</th><th scope="col">리커브</th><th scope="col">컴파운드</th></tr></thead><tbody>${comparisonRows.map(row => `<tr><th scope="row">${row[0]}</th><td>${row[1].replaceAll('\n','<br>')}</td><td>${row[2].replaceAll('\n','<br>')}</td></tr>`).join('')}</tbody></table></div><p class="rules-table-note">컴파운드는 80cm 규격 과녁의 중앙 채점 영역을 사용합니다. 표의 발사 횟수는 슛오프를 제외한 정규 토너먼트 경기 기준이며, 예선 랭킹 라운드와는 다릅니다.</p>
+<h3 class="rules-subheading">실제 스코어로 비교하기</h3><div class="rules-score-examples"><article class="recurve-example"><span>리커브 개인전</span><strong class="rules-example-score">6 : 2</strong><p>승자가 세트 승점 6점을 먼저 획득해 경기가 종료된 결과입니다.</p><b>핵심: 세트별 승리</b></article><article class="compound-example"><span>컴파운드 개인전</span><strong class="rules-example-score">149 : 145</strong><p>15발의 점수를 합산한 결과, 4점 차이로 승부가 결정됐습니다.</p><b>핵심: 전체 누적 점수</b></article></div>
+<div class="rules-flow"><h3>경기 흐름에서 느낄 수 있는 차이</h3><p>리커브는 한 세트를 크게 이겨도 얻는 승점은 2점입니다. 따라서 한 세트를 졌더라도 다음 세트에서 승부를 뒤집을 기회가 있어요.</p><p>반면 컴파운드는 모든 화살 점수가 누적됩니다. 앞선 엔드에서 벌어진 점수 차이를 이후 엔드에서 만회해야 하므로 한 발 한 발의 정확도가 중요해요.</p></div></section>
+<section class="rules-recap" aria-labelledby="recap-heading"><span class="eyebrow">이것만 기억하세요</span><h2 id="recap-heading">양궁 규칙, 이제 조금 익숙해졌나요?</h2><ul><li><strong>리커브:</strong> 70m에서 세트 승점으로 승부를 결정합니다.</li><li><strong>컴파운드:</strong> 50m에서 화살 총점으로 승부를 결정합니다.</li><li>개인전·단체전·혼성전은 발사 횟수와 승리 조건이 서로 다릅니다.</li><li>정규 토너먼트 경기에서 동점이 되면 슛오프로 승자를 결정합니다.</li></ul><p>이제 실제 경기 스코어를 읽어볼까요?</p><a class="button gold" href="/2026-asian-games-archery-results">2026 아시안게임 양궁 결과 분석 읽기 <span aria-hidden="true">↗</span></a></section>
+<aside class="rules-references" aria-label="규칙 참고 자료"><h2>규칙 참고 자료</h2><p>야외 타깃 양궁의 기본 경기 방식을 소개합니다. 세부 규정은 세계양궁연맹 자료에서 확인할 수 있어요.</p><ul><li><a href="https://www.worldarchery.sport/news/202393/how-it-works-beginners-guide-2026-hyundai-archery-world-cup" target="_blank" rel="noopener noreferrer">World Archery · 2026 초보자 가이드 ↗</a></li><li><a href="https://www.worldarchery.sport/sport/disciplines/target-archery" target="_blank" rel="noopener noreferrer">World Archery · 타깃 양궁 규칙 ↗</a></li></ul></aside>
+</main>`;
