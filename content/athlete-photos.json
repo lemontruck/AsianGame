@@ -1,116 +1,119 @@
 {
-  "source": "대한양궁협회 국가대표 소개 페이지 프로필 사진",
-  "mapping_basis": "원본 파일명의 종목과 이름",
+  "source": "제작자 제공 선수 실루엣 이미지",
+  "supplied_as": "사용자 제공 선수 실루엣.zip",
+  "derived_from": {
+    "name": "대한양궁협회 국가대표 소개 페이지",
+    "url": "https://www.archery.or.kr/teamPlayer/nationalTeam"
+  },
+  "mapping_basis": "원본 실루엣 파일명의 종목과 이름",
   "photos": [
     {
       "name": "강채영",
       "discipline_from_filename": "리커브",
-      "original_filename": "리커브_강채영.png",
-      "path": "/assets/athletes/리커브_강채영.png",
+      "original_filename": "리커브_강채영_실루엣.png",
+      "path": "/assets/athletes/리커브_강채영_실루엣.png",
       "width": 340,
       "height": 510,
-      "sha256": "b3265aa474daff0bdba7826b7c1ce76f97f7c0f4eccbae08579f892515fa8dd6"
+      "sha256": "cace9c2ac378bc61edcfb96394c259a554b8e375cd4b7d552870b2d6455d5a3b"
     },
     {
       "name": "김우진",
       "discipline_from_filename": "리커브",
-      "original_filename": "리커브_김우진.png",
-      "path": "/assets/athletes/리커브_김우진.png",
+      "original_filename": "리커브_김우진_실루엣.png",
+      "path": "/assets/athletes/리커브_김우진_실루엣.png",
       "width": 340,
       "height": 510,
-      "sha256": "05ef75ee8236fa6a9512454058f832b256682ed88b12d1ed7f74bc9c99508ca9"
+      "sha256": "635e2e30bd96356187e3e8f786c5e00138fd3ab4d0c14a1c7705ad0e5a6ab0e9"
     },
     {
       "name": "김제덕",
       "discipline_from_filename": "리커브",
-      "original_filename": "리커브_김제덕.png",
-      "path": "/assets/athletes/리커브_김제덕.png",
+      "original_filename": "리커브_김제덕_실루엣.png",
+      "path": "/assets/athletes/리커브_김제덕_실루엣.png",
       "width": 340,
       "height": 510,
-      "sha256": "98126d1469227693a0b6cd8fd849a7e6fddbb52ab118c3426723bafcb15807fa"
+      "sha256": "bcdbf21def6374c0f22cbcfdda0b89dc3a0f8ff3116ec97004bcb9d1a0f81970"
     },
     {
       "name": "오예진",
       "discipline_from_filename": "리커브",
-      "original_filename": "리커브_오예진.png",
-      "path": "/assets/athletes/리커브_오예진.png",
+      "original_filename": "리커브_오예진_실루엣.png",
+      "path": "/assets/athletes/리커브_오예진_실루엣.png",
       "width": 340,
       "height": 510,
-      "sha256": "7284d24903da3b6f3b675ea3e38dd628c28b11c339e453cd9c02dffb9d57c896"
+      "sha256": "90451f7e6c6be385ea5f3228ca830ab15abf52d8e3ed6c07dee44f1b55a8f2d6"
     },
     {
       "name": "이우석",
       "discipline_from_filename": "리커브",
-      "original_filename": "리커브_이우석.png",
-      "path": "/assets/athletes/리커브_이우석.png",
+      "original_filename": "리커브_이우석_실루엣.png",
+      "path": "/assets/athletes/리커브_이우석_실루엣.png",
       "width": 340,
       "height": 510,
-      "sha256": "36b35d618d8e94a7618b8f9a4b21929ac8bd60056c6d992086ef0f1fb5fce709"
+      "sha256": "ccbd4b34f2e1a1b991b6eefa06b87dfa732ac531a5c65d2c0f2b88bb3390cc93"
     },
     {
       "name": "이윤지",
       "discipline_from_filename": "리커브",
-      "original_filename": "리커브_이윤지.png",
-      "path": "/assets/athletes/리커브_이윤지.png",
+      "original_filename": "리커브_이윤지_실루엣.png",
+      "path": "/assets/athletes/리커브_이윤지_실루엣.png",
       "width": 340,
       "height": 510,
-      "sha256": "b70f19afd33fc6e92235a9e694472e2a14d83a3afc844d563452e4aea5d7de8a"
+      "sha256": "0e9c8f9d96de179af6dfbbc2ad39e56b8bc64f34b66ce82a0d3234180e555dde"
     },
     {
       "name": "강연서",
       "discipline_from_filename": "컴파운드",
-      "original_filename": "컴파운드_강연서.png",
-      "path": "/assets/athletes/컴파운드_강연서.png",
+      "original_filename": "컴파운드_강연서_실루엣.png",
+      "path": "/assets/athletes/컴파운드_강연서_실루엣.png",
       "width": 340,
       "height": 510,
-      "sha256": "910a087f4f884df00f38e5b3637b81c508bb50135229255555dae0d045d7ad49"
+      "sha256": "98154a03d98b0a1895b93f589f0e72ec6268e3dff7eea51a3b6953cbdc0b3bef"
     },
     {
       "name": "김종호",
       "discipline_from_filename": "컴파운드",
-      "original_filename": "컴파운드_김종호.png",
-      "path": "/assets/athletes/컴파운드_김종호.png",
+      "original_filename": "컴파운드_김종호_실루엣.png",
+      "path": "/assets/athletes/컴파운드_김종호_실루엣.png",
       "width": 340,
       "height": 510,
-      "sha256": "cad569c0162d6ddfa86348bd4e378865ca2a490fb59f278ef1b23157fedd61c2"
+      "sha256": "de8917d17a20b5eb9205ae619d1ca48b5ae5acce174d09cb195a74c44b9e1e45"
     },
     {
       "name": "박예린",
       "discipline_from_filename": "컴파운드",
-      "original_filename": "컴파운드_박예린.png",
-      "path": "/assets/athletes/컴파운드_박예린.png",
+      "original_filename": "컴파운드_박예린_실루엣.png",
+      "path": "/assets/athletes/컴파운드_박예린_실루엣.png",
       "width": 340,
       "height": 510,
-      "sha256": "ecb500b6c414faeb2190f6ec9b72dcbe3911de128d009ce58c1ca7eff3937c55"
+      "sha256": "57ae7d75397ffd6b8b9572557dc4717693bfa2eeb829381972e4f8c0697f60b8"
     },
     {
       "name": "박정윤",
       "discipline_from_filename": "컴파운드",
-      "original_filename": "컴파운드_박정윤.png",
-      "path": "/assets/athletes/컴파운드_박정윤.png",
+      "original_filename": "컴파운드_박정윤_실루엣.png",
+      "path": "/assets/athletes/컴파운드_박정윤_실루엣.png",
       "width": 340,
       "height": 510,
-      "sha256": "433e2e524a0ad23a3c1a9c5493817dcec321eac498dde684b2dede3af124bb32"
+      "sha256": "54183313da425056927dc8a2d1727f4da7983005e70ad9a148bb5beb0e809a7f"
     },
     {
       "name": "최용희",
       "discipline_from_filename": "컴파운드",
-      "original_filename": "컴파운드_최용희.png",
-      "path": "/assets/athletes/컴파운드_최용희.png",
+      "original_filename": "컴파운드_최용희_실루엣.png",
+      "path": "/assets/athletes/컴파운드_최용희_실루엣.png",
       "width": 340,
       "height": 510,
-      "sha256": "209f24df1d091f835e5233ae65fd77e7907b8b7786ae26009baafa19d30cdd72"
+      "sha256": "f29bf91d7c6e46cadb5f9440f8df06ccaa812a1a697cacd476c7a9f79f9ffbb7"
     },
     {
       "name": "최은규",
       "discipline_from_filename": "컴파운드",
-      "original_filename": "컴파운드_최은규.png",
-      "path": "/assets/athletes/컴파운드_최은규.png",
+      "original_filename": "컴파운드_최은규_실루엣.png",
+      "path": "/assets/athletes/컴파운드_최은규_실루엣.png",
       "width": 340,
       "height": 510,
-      "sha256": "0491121ac618c5f8276bc01dbc969e8941be113c44a25072de642f2b6381e853"
+      "sha256": "d7a8a146270bc64dee64bde5487435f041fccbcace517fefe4b40c63d90e4ce2"
     }
-  ],
-  "source_url": "https://www.archery.or.kr/teamPlayer/nationalTeam",
-  "supplied_as": "사용자 제공 선수프로필.zip"
+  ]
 }
