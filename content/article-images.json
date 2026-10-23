@@ -3,33 +3,44 @@
   "images": [
     {
       "page": 3,
-      "file": "/assets/article/medals-by-country.png",
+      "file": "/assets/article/medals-by-country.webp",
       "alt": "2026 아시안게임 양궁 국가별 메달 현황: 인도 금 5·은 2·동 2, 한국 금 3·은 3·동 3, 중국 금 1·은 2·동 3, 인도네시아 금 1",
-      "caption": "국가별 양궁 메달 현황"
+      "caption": "국가별 양궁 메달 현황",
+      "original_file": "content/original-article-images/medals-by-country.png",
+      "format_note": "무손실 WebP, 원본 크기와 픽셀 유지",
+      "thumbnail_file": "/assets/article/medals-by-country-thumb.webp"
     },
     {
       "page": 5,
-      "file": "/assets/article/korea-finals.png",
+      "file": "/assets/article/korea-finals.webp",
       "alt": "한국 대표팀 주요 결승전 결과: 남자 리커브 개인·단체와 남자 컴파운드 개인 금메달, 여자 리커브 개인·단체와 컴파운드 혼성 은메달",
-      "caption": "한국 대표팀 결승전 결과"
+      "caption": "한국 대표팀 결승전 결과",
+      "original_file": "content/original-article-images/korea-finals.png",
+      "format_note": "무손실 WebP, 원본 크기와 픽셀 유지"
     },
     {
       "page": 6,
-      "file": "/assets/article/athlete-medals.png",
+      "file": "/assets/article/athlete-medals.webp",
       "alt": "주요 선수별 메달 현황: 이우석 금 2, 김우진 금 1, 김제덕 금 1·동 1, 김종호 금 1, 오예진 은 2, 강채영 은 1·동 1, 강연서 동 2",
-      "caption": "주요 선수별 메달 현황"
+      "caption": "주요 선수별 메달 현황",
+      "original_file": "content/original-article-images/athlete-medals.png",
+      "format_note": "무손실 WebP, 원본 크기와 픽셀 유지"
     },
     {
       "page": 9,
-      "file": "/assets/article/korea-india-gold.png",
+      "file": "/assets/article/korea-india-gold.webp",
       "alt": "한국과 인도 금메달 종목 비교: 한국 남자 리커브 개인·단체와 남자 컴파운드 개인, 인도 여자 리커브 개인·단체와 컴파운드 남자·여자·혼성 단체",
-      "caption": "한국·인도 금메달 종목 비교"
+      "caption": "한국·인도 금메달 종목 비교",
+      "original_file": "content/original-article-images/korea-india-gold.png",
+      "format_note": "무손실 WebP, 원본 크기와 픽셀 유지"
     },
     {
       "page": 11,
-      "file": "/assets/article/recurve-compound.png",
+      "file": "/assets/article/recurve-compound.webp",
       "alt": "리커브와 컴파운드 비교: 활의 구조, 세트 승점과 총점 계산, 승패 결정 및 슛오프 방식",
-      "caption": "리커브·컴파운드 차이"
+      "caption": "리커브·컴파운드 차이",
+      "original_file": "content/original-article-images/recurve-compound.png",
+      "format_note": "무손실 WebP, 원본 크기와 픽셀 유지"
     }
   ]
 }
