@@ -18,8 +18,8 @@ export const faqAndSources = `
 <details><summary>6–2와 149–145는 왜 점수 차이가 큰가요?</summary><p>리커브의 6–2는 세트를 이기거나 비겨서 쌓은 승점이에요. 컴파운드의 149–145는 화살로 얻은 점수를 더한 실제 총점이에요. 서로 다른 점수 방식입니다.</p></details>
 <details><summary>5–5 동점 뒤에 5–6으로 끝난 건 무슨 뜻인가요?</summary><p>리커브 개인전에서 세트 승점이 5–5이면 슛오프로 승부를 가려요. 슛오프 승자에게 승점 1점을 더해 최종 결과가 6–5 또는 5–6으로 표시됩니다.</p></details>
 <details><summary>다시보기 버튼을 누르면 영상이 바로 시작되나요?</summary><p>MBC의 해당 방송 회차로 이동합니다. 여러 경기가 한 회차에 들어 있을 수 있으며, 영상 재생에는 MBC 로그인이나 이용권이 필요할 수 있어요. 제공 여부와 이용 조건은 MBC 페이지에서 확인해주세요.</p></details>
-<details><summary>골든텐은 공식 대회 사이트인가요?</summary><p>아니요. 양궁을 쉽게 소개하기 위해 제작한 수업 실습용 사이트입니다. 경기 결과와 선수 성적은 제공된 기획 원고를 바탕으로 정리했으며, 최종 확인은 아래 공식 기록을 참고해주세요.</p></details>
+<details><summary>골든텐은 공식 대회 사이트인가요?</summary><p>아니요. 양궁을 쉽게 소개하기 위해 제작한 수업 실습용 사이트입니다. 경기 결과와 선수 성적의 최종 확인은 아래 공식 기록을 참고해주세요.</p></details>
 </div></div></section>
 <section class="section wrap sources-section" id="sources" aria-labelledby="sources-title"><div class="section-heading"><div><span class="eyebrow">공식 출처</span><h2 id="sources-title">기록은 공식 자료에서 확인하세요.</h2></div></div>
 <div class="source-grid"><a href="https://www.worldarchery.sport/competition/31382/20th-asian-games-aichi-nagoya-2026/results" target="_blank" rel="noopener noreferrer"><span>세계양궁연맹 · WORLD ARCHERY</span><strong>경기 결과와 대진표 ↗</strong></a><a href="https://www.archery.or.kr/teamPlayer/nationalTeam" target="_blank" rel="noopener noreferrer"><span>대한양궁협회</span><strong>국가대표 선수 정보 ↗</strong></a><a href="https://playvod.imbc.com/templete/VodList?bid=1006923100000100000" target="_blank" rel="noopener noreferrer"><span>MBC</span><strong>아시안게임 다시보기 ↗</strong></a></div>
-<p class="data-note">경기 기록과 선수 성적은 사용자가 작성한 원고를 기준으로 구성했습니다. 공식 기록과의 최종 대조가 필요합니다. 이 사이트는 공식 대회·협회·선수의 운영 페이지가 아닙니다.</p></section>`;
+<p class="data-note">경기 기록과 선수 성적은 공식 기록과의 최종 대조가 필요합니다. 이 사이트는 공식 대회·협회·선수의 운영 페이지가 아닙니다.</p></section>`;
