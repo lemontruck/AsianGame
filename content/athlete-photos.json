@@ -1,5 +1,5 @@
 {
-  "source": "사용자 제공 선수프로필.zip",
+  "source": "대한양궁협회 국가대표 소개 페이지 프로필 사진",
   "mapping_basis": "원본 파일명의 종목과 이름",
   "photos": [
     {
@@ -110,5 +110,7 @@
       "height": 510,
       "sha256": "0491121ac618c5f8276bc01dbc969e8941be113c44a25072de642f2b6381e853"
     }
-  ]
+  ],
+  "source_url": "https://www.archery.or.kr/teamPlayer/nationalTeam",
+  "supplied_as": "사용자 제공 선수프로필.zip"
 }
